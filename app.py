@@ -262,7 +262,7 @@ import torch
 device = "cuda" if torch.cuda.is_available() else "cpu"
 # Model ve Şirketler
 model = SentenceTransformer(
-    "intfloat/multilingual-e5-large", device=device, low_cpu_mem_usage=True)
+    "intfloat/multilingual-e5-large", device=device)
 company_list = ["qnb", "garanti"]
 
 # IBM API Key ve Project ID

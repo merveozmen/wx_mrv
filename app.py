@@ -258,9 +258,11 @@ connect_milvus()
 
 
 import torch
+
+device = "cuda" if torch.cuda.is_available() else "cpu"
 # Model ve Şirketler
 model = SentenceTransformer(
-    "intfloat/multilingual-e5-large", device="cpu")
+    "intfloat/multilingual-e5-large", device=device, low_cpu_mem_usage=True)
 company_list = ["qnb", "garanti"]
 
 # IBM API Key ve Project ID

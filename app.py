@@ -92,7 +92,7 @@ def search_with_auto_classification(user_query):
 
     collection = Collection(target_collection)
     query_vector = model.encode([user_query])
-    search_params = {"metric_type": "L2", "params": {"nprobe": 10}}
+    search_params = {"metric_type": "L2", "params": {"nprobe": 32}}
 
     results = collection.search(
         data=query_vector,

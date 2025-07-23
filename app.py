@@ -41,7 +41,7 @@ def connect_milvus():
     connections.connect(host=MILVUS_HOST, port=MILVUS_PORT, secure=True, user=MILVUS_USERNAME, password=MILVUS_PASSWORD)
 
 # IBM Token Alma
-@st.cache_data
+@st.cache_data(ttl=3000)
 def get_ibm_token(API_KEY):
     headers = {'Content-Type': 'application/x-www-form-urlencoded'}
     data = f'grant_type=urn:ibm:params:oauth:grant-type:apikey&apikey={API_KEY}'
